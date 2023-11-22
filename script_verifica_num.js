@@ -1,34 +1,35 @@
 function verificaNum() {
-    caracteres_num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
     for (l = 0; l < caracteres_num.length; l++) {
-        if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_num[l]) {  // Ok
-            requisto_de_aprovacao_senha2 = true
-            alert("requisito 1 " + requisto_de_aprovacao_senha2)
+        if (caracteres_senha[caracteres_senha.length - 1][t] === caracteres_num[l]) {  // Ok
+            controlNum = true
+            alert("Sua senha tem números!!! " + caracteres_num[p]);
+            t = 0
             break
         } else {
-            requisto_de_aprovacao_senha2 = false
-            console.log("k = " + k); // mostra o valor do digito que está sendo informado
-            console.log("Num = " + caracteres_num[l]); // Mostra o Número que está sendo comparado 
-            console.log(caracteres_senha[caracteres_senha.length - 1][k]); // Mostra o primeiro digito 
+            controlNum = false
+        }
     }
-}
+    verificaNumParte2()
 }
 
 function verificaNumParte2() {
-    k++
-    while (caracteres_senha[caracteres_senha.length - 1][k] != verificaNum[j]) {
-        console.log("k = " + k);
+    t++
+    while (caracteres_senha[caracteres_senha.length - 1][t] != caracteres_num[p]) {
         if (controlNum == false) {
-            for (j = 0; j < verificaNum.length; j++) {
-                if (caracteres_senha[caracteres_senha.length - 1][k] == verificaNum[j]) {  // Ok
-                    requisto_de_aprovacao_senha2 = true
-                    alert("requisito 1 " + requisto_de_aprovacao_senha2)
+            for (p = 0; p < caracteres_num.length; p++) {
+                if (caracteres_senha[caracteres_senha.length - 1][t] == caracteres_num[p]) {  // Ok
+                    controlNum = true
+                    alert("Sua senha contém números!!!" + caracteres_num[p])
                     break
                 } else {
-                    controlNum == false
+                    controlNum = false
                 }
             }
         }
-        k++
+        if(controlNum == true){ // Verifica se a var controlMaiusculas é igual a true para evitar loop infinito
+            break
+        } else {
+            t++
+        }
     }
 }
