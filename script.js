@@ -11,7 +11,7 @@ function verificar_caracteres(){
 
 function armazena_senha(){
     caracteres_senha.push(valorSenha.value)
-    console.log("Valor caracte " + caracteres_senha[i++]); // função ok
+    console.log("Valor caracte " + caracteres_senha[i++]); //  função ok
 }
 
 function verifica_letras_maiusculas(){
