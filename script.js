@@ -1,5 +1,5 @@
 function verificar_caracteres() {
-    if (caracteres_senha.length < 8) { // mudar para < 8 depois
+    if (caracteres_senha.length < 8) { 
         alert("Sua senha deve conter mais de 8 digitos!")
 
     } else if (caracteres_senha.length > 15) {
@@ -13,7 +13,7 @@ function verificar_caracteres() {
             alert("Sua senha atende a todos os requisitos")
         } else {
             alert("A senha deve conter pelo menos um letra maiuscula, um número e um caractere especial (@,#,$)")
-            window.location.reload()
+            window.location.reload();
         }
     }
 }
@@ -23,8 +23,8 @@ function armazena_senha() {
 }
 
 function verifica_letras_maiusculas() { // Ok
-    for (j = 0; j < caracteres_maiusculos.length; j++) {
-        if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[j]) {  // Ok
+    for (i = 0; i < caracteres_maiusculos.length; i++) {
+        if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[i]) {  // Ok
             controlMaiusculas = true
             k = 0
             break
@@ -36,12 +36,14 @@ function verifica_letras_maiusculas() { // Ok
 }
 
 function verificarParte2_caracteresMaiusculas() { // Ok
+    k = 0 
     k++
-    while (caracteres_senha[caracteres_senha.length - 1][k] != caracteres_maiusculos[j]) {
+    while (caracteres_senha[caracteres_senha.length - 1][k] != caracteres_maiusculos[i]) {
         if (controlMaiusculas == false) {
-            for (j = 0; j < caracteres_maiusculos.length; j++) {
-                if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[j]) {  
+            for (i = 0; i < caracteres_maiusculos.length; i++) {
+                if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[i]) {  
                     controlMaiusculas = true
+                    k = 0
                     break
                 } else {
                     controlMaiusculas = false

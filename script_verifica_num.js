@@ -1,8 +1,9 @@
 function verificaNum() {
-    for (l = 0; l < caracteres_num.length; l++) {
-        if (caracteres_senha[caracteres_senha.length - 1][t] === caracteres_num[l]) {  // Ok
+    k = 0
+    for (i = 0; i < caracteres_num.length; i++) {
+        if (caracteres_senha[caracteres_senha.length - 1][k] === caracteres_num[i]) {  // Ok
             controlNum = true
-            t = 0
+            k = 0
             break
         } else {
             controlNum = false
@@ -12,12 +13,14 @@ function verificaNum() {
 }
 
 function verificaNumParte2() {
-    t++
-    while (caracteres_senha[caracteres_senha.length - 1][t] != caracteres_num[l]) {
+    k = 0
+    k++
+    while (caracteres_senha[caracteres_senha.length - 1][k] != caracteres_num[i]) {
         if (controlNum == false) {
-            for (l = 0; l < caracteres_num.length; l++) {
-                if (caracteres_senha[caracteres_senha.length - 1][t] == caracteres_num[l]) {  // Ok
+            for (i = 0; i < caracteres_num.length; i++) {
+                if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_num[i]) {  // Ok
                     controlNum = true
+                    k = 0
                     break
                 } else {
                     controlNum = false
@@ -27,41 +30,48 @@ function verificaNumParte2() {
         if (controlNum == true) { // Verifica se a var controlMaiusculas é igual a true para evitar loop infinito
             break
         } else {
-            t++
+            k++
         }
     }
 }
 
 function verificaEspeciais() {
-    for (p = 0; p < caracteres_especiais.length; p++) {
-        if (caracteres_senha[caracteres_senha.length - 1][q] === caracteres_especiais[p]) {  // Ok
+    k = 0
+    for (i = 0; i < caracteres_especiais.length; i++) {
+        if (caracteres_senha[caracteres_senha.length - 1][k] === caracteres_especiais[i]) {  // Ok
             controlEspeciais = true
-            q = 0
+            k = 0
+            console.log(caracteres_senha[caracteres_senha.length - 1][k] + " é igual a " + caracteres_especiais[i]);
             break
         } else {
             controlEspeciais = false
+            console.log(caracteres_senha[caracteres_senha.length - 1][k] + " não é igual a " + caracteres_especiais[i]);
         }
     }
     verificaEspeciaisParte2()
 }
 
 function verificaEspeciaisParte2() {
-    q++
-    while (caracteres_senha[caracteres_senha.length - 1][q] != caracteres_especiais[p]) {
+    k = 0
+    k++
+    while (caracteres_senha[caracteres_senha.length - 1][k] != caracteres_especiais[i]) {
         if (controlEspeciais == false) {
-            for (p = 0; p < caracteres_especiais.length; p++) {
-                if (caracteres_senha[caracteres_senha.length - 1][q] == caracteres_especiais[p]) {  // Ok
+            for (i = 0; i < caracteres_especiais.length; i++) {
+                if (caracteres_senha[caracteres_senha.length - 1][k] == caracteres_especiais[i]) {  // Ok
                     controlEspeciais = true
+                    console.log(caracteres_senha[caracteres_senha.length - 1][k] + " é igual a " + caracteres_especiais[i]);
+                    k = 0
                     break
                 } else {
                     controlEspeciais = false
+                    console.log(caracteres_senha[caracteres_senha.length - 1][k] + " não é igual a " + caracteres_especiais[i]);
                 }
             }
         }
         if (controlEspeciais == true) { // Verifica se a var controlEspeciais é igual a true para evitar loop infinito
             break
         } else {
-            q++
+            k++
         }
     }
 }
