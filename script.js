@@ -17,10 +17,10 @@ function armazena_senha(){
 function verifica_letras_maiusculas(){
     caracteres_maiusculos = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     for(j = 0; j < caracteres_maiusculos.length; j++){
-        if(caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[j]){  // Desenvolvendo metodo para verificar as letras maiusculas;
+        if(caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[j]){  //  Desenvolvendo metodo para verificar as letras maiusculas;
             alert("Sua senha tem letras maisculas")
             controlMaiusculas == true  
-            break        // Fase de teste da função
+            break        
         } else {
             console.log("K = " + k);
             console.log(caracteres_senha[caracteres_senha.length - 1][k])
@@ -37,7 +37,7 @@ function verificarParte2_caracteresMaiusculas(){
         if(controlMaiusculas == false){
             for(j = 0; j < caracteres_maiusculos.length; j++){
                 if(caracteres_senha[caracteres_senha.length - 1][k] == caracteres_maiusculos[j]){  // Desenvolvendo metodo para verificar as letras maiusculas;
-                    alert("Sua senha tem letras maisculas") // Fase de teste da função
+                    alert("Sua senha tem letras maisculas") 
                     break
                 } else {
                     controlMaiusculas == false
