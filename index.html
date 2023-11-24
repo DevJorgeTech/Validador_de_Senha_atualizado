@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validador de senha</title>
     <script src="./script.js"></script>
     <script src="./script_verifica_num.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <label for="">Senha: </label><input type="text" id="entrada" oninput="armazena_senha()"> <br> <br>
-    <button type="button" id="validar" onclick="verificar_caracteres()">Validar</button>
-    <script src="./script_captura_dados.js"></script>
+
+    <h1>Validador de Senha</h1>
+    <div id="programa">
+        <div id="inputs_label">
+            <label for="">Usuário: </label><input type="text" id="user"> <br> <br>
+            <label for="">Senha: </label><input type="password" id="entrada" oninput="armazena_senha()"> <br> <br>
+            <input type="checkbox" name="" id="verificar_senha"> <label for="">Verificar Senha</label>  <br> <br>
+        </div>
+        <div id="buttons">
+            <button type="button" id="validar" onclick="verificar_caracteres()">Validar</button>
+            <script src="./script_captura_dados.js"></script>
+            <script src="./script_verifica_senha.js"></script>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -10,7 +10,7 @@ function verificar_caracteres() {
         verificaEspeciais()
 
         if(controlMaiusculas == true && controlNum == true && controlEspeciais == true){
-            alert("Sua senha atende a todos os requisitos")
+            window.location.href = "página_acesso.html";
         } else {
             alert("A senha deve conter pelo menos um letra maiuscula, um número e um caractere especial (@,#,$)")
             window.location.reload();
